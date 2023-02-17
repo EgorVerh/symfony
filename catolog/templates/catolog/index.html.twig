@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ввод данных{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div align="center" style="margin:1% 5% 0 5%">
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{{ form_start(form)}}
+{{form(form)}}
+{{ form_end(form)}}
+<div class="input-group mb-3" style="margin:10px 0 0 10px;">
+{% if id =='Здесь будет ссылка на ваш текст' %}
+<span class="input-group-text" id="basic-addon3" align="center">{{id}}</span>
+{% else %}
+ <span class="input-group-text" id="basic-addon3" align="center">Ссылка на ваш текст:&nbsp;<a href="http://symfony/catolog/text/{{id}}">http://symfony/catolog/text/{{id}}</a></span>
+{% endif %}
+</div>
+</div>
+{% endblock %}

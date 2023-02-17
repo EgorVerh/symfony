@@ -1,0 +1,7 @@
+index:
+    path: /catolog/index
+    controller: App\Controller\CatologController::index
+test:
+    path: /catolog/text/{id}
+    controller: App\Controller\CatologController::text
+
