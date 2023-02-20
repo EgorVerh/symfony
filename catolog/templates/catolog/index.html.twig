@@ -16,7 +16,7 @@
 {% if id =='Здесь будет ссылка на ваш текст' %}
 <span class="input-group-text" id="basic-addon3" align="center">{{id}}</span>
 {% else %}
- <span class="input-group-text" id="basic-addon3" align="center">Ссылка на ваш текст:&nbsp;<a href="http://symfony/catolog/text/{{id}}">http://symfony/catolog/text/{{id}}</a></span>
+ <span class="input-group-text" id="basic-addon3" align="center">Ссылка на ваш текст:&nbsp;<a href="{{urltext}}">{{urltext}}</a></span>
 {% endif %}
 </div>
 </div>

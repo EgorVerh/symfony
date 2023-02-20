@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class CatologController extends AbstractController
 {
@@ -27,8 +28,11 @@ class CatologController extends AbstractController
             $entityManager = $doctrine->getManager();
             $entityManager->persist($texts);
             $entityManager->flush();
+            $urltext = $this->generateUrl('test', [
+                'id' => $texts->getId(),
+            ],UrlGeneratorInterface::ABSOLUTE_URL);
             return $this->render('catolog/index.html.twig', [
-                'form' =>$form->createView(),'id'=>$texts->getId()
+                'form' =>$form->createView(),'id'=>$texts->getId(), 'urltext'=>$urltext
             ]); 
         }
         return $this->render('catolog/index.html.twig', [
